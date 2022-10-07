@@ -16,10 +16,13 @@ console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
 
 let unique = function(array) {
     // Your code here
-    let hasUnique = array.filter(item => {
-        return hasUnique.findIndex(item) === -1;
+    let obj = {};
+    return array.map(item => {
+        if (!obj[item]) {
+            obj[item] = 1;
+            return item;
+        }
     })
-    return hasUnique;
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
