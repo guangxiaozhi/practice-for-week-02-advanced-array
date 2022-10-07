@@ -31,8 +31,12 @@ console.log(repeatingTranslate("her family flew to France"));   // "herer family
 let repeatingTranslate = function(sentence) {
     // Your code here
     let arr = sentence.split(" ");
-    let repeat = arr.reduce(translateWord);
-    console.log(repeat);
+    let i = 0;
+    arr.forEach((word, i) => {
+        arr[i] = translateWord(word);
+        i++;
+    })
+    return arr.join(" ");
 };
 
 
