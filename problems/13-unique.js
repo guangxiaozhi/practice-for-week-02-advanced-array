@@ -17,12 +17,14 @@ console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
 let unique = function(array) {
     // Your code here
     let obj = {};
-    return array.map(item => {
-        if (!obj[item]) {
+    let ans = [];
+    array.forEach(item => {
+        if(!obj[item]) {
             obj[item] = 1;
-            return item;
+            ans.push(item);
         }
     })
+    return ans;
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
